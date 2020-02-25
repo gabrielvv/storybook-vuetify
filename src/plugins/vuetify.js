@@ -1,7 +1,62 @@
 import Vue from 'vue';
-import Vuetify from 'vuetify/lib';
+import Vuetify, {
+    VApp,
+    VBtn,
+    VCard,
+    VCardText,
+    VCol,
+    VContainer,
+    VContent,
+    VDialog,
+    VDivider,
+    VIcon,
+    VImg,
+    VList,
+    VListItem,
+    VListItemAvatar,
+    VListItemContent,
+    VListItemIcon,
+    VListItemTitle,
+    VNavigationDrawer,
+    VRow,
+    VSheet,
+    VSnackbar,
+    VSparkline,
+    VToolbar,
+    VLayout,
+} from 'vuetify/lib';
+import { Ripple } from 'vuetify/lib/directives'
 
-Vue.use(Vuetify);
-
-export default new Vuetify({
+Vue.use(Vuetify, {
+    components: {
+        VApp,
+        VBtn,
+        VCard,
+        VCardText,
+        VCol,
+        VContainer,
+        VContent,
+        VDialog,
+        VDivider,
+        VIcon,
+        VImg,
+        VList,
+        VListItem,
+        VListItemAvatar,
+        VListItemContent,
+        VListItemIcon,
+        VListItemTitle,
+        VNavigationDrawer,
+        VRow,
+        VSheet,
+        VSnackbar,
+        VSparkline,
+        VToolbar,
+        VLayout,
+    },
+    directives: {
+        Ripple,
+    },
 });
+
+export default new Vuetify();
