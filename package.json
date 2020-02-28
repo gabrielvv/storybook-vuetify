@@ -6,8 +6,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build-docs": "build-storybook --docs",
+    "storybook": "start-storybook -p 6006 -s .storybook/public",
+    "docs": "start-storybook -p 6006 -s .storybook/public --docs"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -17,19 +19,27 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@storybook/addon-actions": "^5.3.13",
+    "@storybook/addon-docs": "^5.3.13",
     "@storybook/addon-links": "^5.3.13",
+    "@storybook/addon-storysource": "^5.3.13",
+    "@storybook/addon-viewport": "^5.3.14",
     "@storybook/addons": "^5.3.13",
     "@storybook/vue": "^5.3.13",
     "@vue/cli-plugin-babel": "^4.2.0",
-    "@vue/cli-plugin-eslint": "^4.2.0",
+    "@vue/cli-plugin-eslint": "^4.2.2",
     "@vue/cli-service": "^4.2.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
     "deepmerge": "^4.2.2",
     "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-vue": "^6.1.2",
     "fibers": "^4.0.2",
+    "lint-staged": "^9.5.0",
+    "react": "^16.13.0",
+    "react-is": "^16.13.0",
     "sass": "^1.26.0",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-vuetify": "^2.0.5",
@@ -42,8 +52,9 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+      "plugin:vue/recommended",
+      "eslint:recommended",
+      "@vue/airbnb"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
@@ -53,5 +64,14 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
 }

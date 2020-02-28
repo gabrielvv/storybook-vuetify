@@ -1,0 +1,23 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { VBtn } from "vuetify/lib";
+import { action } from "@storybook/addon-actions";
+
+<Meta title="Design System/GVBtn" component={VBtn} />
+
+# GVBtn
+
+<Preview>
+  <Story name="basic" inline={true} height="50px">
+    {{
+      components: { VBtn },
+      template: `
+       <div>
+        <v-btn :ripple="false" color="primary" @click="action"><v-icon left>mdi-pencil</v-icon>Principal</v-btn>
+        <v-btn outlined :ripple="false" class="gv-btn gv-btn--outlined" @click="action"><v-icon left>mdi-pencil</v-icon>Moyen</v-btn>
+        <v-btn text :ripple="false" class="gv-btn gv-btn--text" @click="action"><v-icon left>mdi-pencil</v-icon>Faible</v-btn>
+      </div>
+      `,
+      methods: { action: action("clicked") }
+    }}
+  </Story>
+</Preview>

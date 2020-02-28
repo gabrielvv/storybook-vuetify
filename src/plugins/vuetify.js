@@ -1,6 +1,46 @@
 import Vue from 'vue';
 import Vuetify, {
+  VApp,
+  VAppBar,
+  VAppBarNavIcon,
+  VBtn,
+  VCard,
+  VCardText,
+  VCol,
+  VContainer,
+  VContent,
+  VDialog,
+  VDivider,
+  VIcon,
+  VImg,
+  VList,
+  VListItem,
+  VListItemAvatar,
+  VListItemContent,
+  VListItemIcon,
+  VListItemTitle,
+  VListItemAction,
+  VListGroup,
+  VNavigationDrawer,
+  VMenu,
+  VRow,
+  VSheet,
+  VSnackbar,
+  VSparkline,
+  VSpacer,
+  VSubheader,
+  VToolbar,
+  VToolbarTitle,
+  VTooltip,
+  VLayout,
+} from 'vuetify/lib';
+import { Ripple } from 'vuetify/lib/directives';
+
+Vue.use(Vuetify, {
+  components: {
     VApp,
+    VAppBar,
+    VAppBarNavIcon,
     VBtn,
     VCard,
     VCardText,
@@ -17,46 +57,33 @@ import Vuetify, {
     VListItemContent,
     VListItemIcon,
     VListItemTitle,
+    VListItemAction,
+    VListGroup,
+    VMenu,
     VNavigationDrawer,
     VRow,
     VSheet,
     VSnackbar,
     VSparkline,
+    VSpacer,
+    VSubheader,
     VToolbar,
+    VToolbarTitle,
+    VTooltip,
     VLayout,
-} from 'vuetify/lib';
-import { Ripple } from 'vuetify/lib/directives'
-
-Vue.use(Vuetify, {
-    components: {
-        VApp,
-        VBtn,
-        VCard,
-        VCardText,
-        VCol,
-        VContainer,
-        VContent,
-        VDialog,
-        VDivider,
-        VIcon,
-        VImg,
-        VList,
-        VListItem,
-        VListItemAvatar,
-        VListItemContent,
-        VListItemIcon,
-        VListItemTitle,
-        VNavigationDrawer,
-        VRow,
-        VSheet,
-        VSnackbar,
-        VSparkline,
-        VToolbar,
-        VLayout,
-    },
-    directives: {
-        Ripple,
-    },
+  },
+  directives: {
+    Ripple,
+  },
 });
 
-export default new Vuetify();
+export default new Vuetify({
+  theme: {
+    light: true,
+    themes: {
+      light: {
+        primary: '#00528D',
+      },
+    },
+  },
+});
